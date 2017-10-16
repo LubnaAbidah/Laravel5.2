@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','level',
     ];
 
     /**
@@ -23,4 +23,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+         public function tugas_magang()
+    {
+        return $this->hasMany('App\TugasMagang', 'id_user');
+    }
 }
